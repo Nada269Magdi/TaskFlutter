@@ -11,10 +11,8 @@ class _SignupState extends State<Signup> {
   @override
   Widget build(BuildContext context) {
     double screenwidth =MediaQuery.of(context).size.width;
-    return Scaffold(
-          body: Padding(padding: EdgeInsets.all(screenwidth*0.1),
-          child: SingleChildScrollView(
-            child: Column(
+    return Padding(padding: EdgeInsets.all(screenwidth*0.1),
+          child: Column(
               children: [
                TextField(
                   keyboardType:TextInputType.emailAddress ,
@@ -56,8 +54,6 @@ class _SignupState extends State<Signup> {
                 
               ]
             )
-          )
-      )
     );
   }
 }

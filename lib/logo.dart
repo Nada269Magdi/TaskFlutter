@@ -43,7 +43,8 @@ class _MainPageState extends State<MainPage> {
             )
           ],
         ),
-        body: LayoutBuilder(builder: (context,Constraints){
+        body: LayoutBuilder(
+          builder: (context,Constraints){
           double screenwidth = Constraints.maxWidth;
           if (screenwidth>900) { //pc
             return Row(
@@ -60,10 +61,13 @@ class _MainPageState extends State<MainPage> {
             );
           }
           else{ // tablet or phone
-            return Column(children: [
-              Image.asset('asset/bg-top.png'),
-              islogin ? Login() : Signup(),
-              ],
+            return SingleChildScrollView(
+              child: Column(
+                children: [
+                  Image.asset('asset/bg-top.png'),
+                  islogin? Login():Signup()
+                ]
+              )
             );
           }
         }),
